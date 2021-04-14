@@ -2,6 +2,7 @@ package org.example.composite;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Directory implements FileSystemElement{
 
@@ -19,8 +20,14 @@ public class Directory implements FileSystemElement{
     }
 
     @Override
-    public boolean remove() {
-        return true;
+    public boolean remove(FileSystemElement element) {
+        if (dirElements.contains(element)) {
+            dirElements.remove(element);
+            return true;
+        } else {
+            System.out.printf("%s does not exist in directory %s.%n", element, name);
+            return false;
+        }
     }
 
     @Override

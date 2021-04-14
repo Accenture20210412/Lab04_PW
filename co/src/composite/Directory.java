@@ -21,8 +21,8 @@ public class Directory implements FileSystemElement {
 
 	@Override
 	public boolean remove() {
-		// TODO Auto-generated method stub
-		return false;
+		dirElements.remove()
+		return ;
 	}
 
 	@Override

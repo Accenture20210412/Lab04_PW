@@ -11,5 +11,7 @@ public class Runner {
         directoryA.add(directoryB);
 
         directoryA.print();
+
+        directoryA.de
     }
 }

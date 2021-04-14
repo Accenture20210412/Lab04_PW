@@ -15,7 +15,7 @@ public class File implements FileSystemElement{
     }
 
     @Override
-    public boolean remove() {
+    public boolean remove(FileSystemElement element) {
         // TODO Auto-generated method stub
         return false;
     }
