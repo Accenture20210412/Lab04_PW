@@ -32,6 +32,7 @@ public class Directory implements FileSystemElement{
 
     @Override
     public boolean move() {
+        //można zmienić metodę na moveTo
         // TODO Auto-generated method stub
         return false;
     }
@@ -49,5 +50,19 @@ public class Directory implements FileSystemElement{
     @Override
     public String toString() {
         return String.format("%s", name);
+    }
+
+    public void printAllHierarchy() {
+        int count = 0;
+        for (int i = 0; i < dirElements.size(); i++) {
+            if (dirElements.get(i) instanceof File) {
+                System.out.println(dirElements.get(i));
+            } else {
+                count+=4;
+                System.out.println(dirElements.get(i));
+                Directory dir = (Directory) dirElements.get(i);
+                dir.printAllHierarchy();
+            }
+        }
     }
 }
