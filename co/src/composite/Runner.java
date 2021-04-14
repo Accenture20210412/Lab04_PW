@@ -1,4 +1,4 @@
-package co;
+package src.composite;
 
 public class Runner {
     public static void main(String[] args) {

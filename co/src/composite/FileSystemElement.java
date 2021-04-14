@@ -1,4 +1,4 @@
-package co;
+package src.composite;
 
 public interface FileSystemElement {
 

@@ -1,11 +1,15 @@
-package co;
+package src.composite;
 
-//liść z wzorca Composite
-public class File implements FileSystemElement {
+import java.util.ArrayList;
+import java.util.List;
 
-	private String name;
+//Kompozyt z wzorca Composite
+public class Directory implements FileSystemElement {
 	
-	public File(String name) {
+	private String name;
+	private List<FileSystemElement> dirElements = new ArrayList<>();
+	
+	public Directory(String name) {
 		this.name = name;
 	}
 	
@@ -28,13 +32,13 @@ public class File implements FileSystemElement {
 	}
 
 	@Override
-	public void print() {
-		System.out.println(name);
+	public void print() { //should iterate over all elements
+		dirElements.forEach(System.out::println);
 	}
 
 	@Override
 	public void add(FileSystemElement element) {
-		throw new UnsupportedOperationException();
+		dirElements.add(element);
 	}
 
 	@Override
