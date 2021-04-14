@@ -1,43 +1,18 @@
 package org.example.composite;
 
-public class File implements FileSystemElement{
-
-    private String name;
+public class File extends FileSystemElement{
 
     public File(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public boolean rename(String newName) {
-        this.name = newName;
-        return true;
-    }
-
-    @Override
-    public boolean remove(FileSystemElement element) {
-        // TODO Auto-generated method stub
-        return false;
-    }
-
-    @Override
-    public boolean move() {
-        // TODO Auto-generated method stub
-        return false;
+        super(name);
     }
 
     @Override
     public void print() {
-        System.out.println(name);
-    }
-
-    @Override
-    public void add(FileSystemElement element) {
-        throw new UnsupportedOperationException();
+        System.out.println(super.getName());
     }
 
     @Override
     public String toString() {
-        return String.format("%s", name);
+        return String.format("%s", super.getName());
     }
 }

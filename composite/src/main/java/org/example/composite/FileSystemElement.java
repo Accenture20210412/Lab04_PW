@@ -1,12 +1,33 @@
 package org.example.composite;
 
-public interface FileSystemElement {
+abstract class FileSystemElement {
 
-    public boolean rename(String newName);
-    public boolean remove(FileSystemElement element);
+    private String name;
 
-    //dodać ścieżkę docelową w parametrach
-    public boolean move();
-    public void print();
-    public void add(FileSystemElement element);
+    public FileSystemElement(String name) {
+        this.name = name;
+    }
+
+    abstract void print();
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean rename(String newName) {
+        this.name = newName;
+        return true;
+    }
+
+    public boolean moveTo(FileSystemElement element) {
+        if (element instanceof Directory) {
+            ((Directory) element).add(this);
+            //usunac z obecnego directory
+
+            return true;
+        } else {
+            System.out.printf("Unable to move %s to %s file.", this.name, element);
+            return false;
+        }
+    }
 }

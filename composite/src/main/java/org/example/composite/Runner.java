@@ -35,6 +35,17 @@ public class Runner {
 
         directoryD.add(documentodt);
 
-        directoryB.print();
+
+        directoryA.printAllHierarchy();
+        //
+        //f5m2t.rename("f52.m2t");
+
+
+        //
+        //directoryA.remove(f1txt);
+
+        f1doc.moveTo(directoryB);
+        System.out.println();
+        directoryA.printAllHierarchy();
     }
 }
