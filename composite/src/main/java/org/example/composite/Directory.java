@@ -22,7 +22,6 @@ public class Directory extends FileSystemElement{
         }
     }
 
-
     @Override
     public void print() { //should iterate over all elements
         dirElements.forEach(System.out::println);
@@ -30,6 +29,7 @@ public class Directory extends FileSystemElement{
 
     public void add(FileSystemElement element) {
         dirElements.add(element);
+        element.setParent(this);
     }
 
     @Override
@@ -37,17 +37,4 @@ public class Directory extends FileSystemElement{
         return String.format("%s", super.getName());
     }
 
-    public void printAllHierarchy() {
-        int count = 0;
-        for (int i = 0; i < dirElements.size(); i++) {
-            if (dirElements.get(i) instanceof File) {
-                System.out.println(dirElements.get(i));
-            } else {
-                count+=4;
-                System.out.println(dirElements.get(i));
-                Directory dir = (Directory) dirElements.get(i);
-                dir.printAllHierarchy();
-            }
-        }
-    }
 }

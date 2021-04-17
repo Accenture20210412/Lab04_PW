@@ -8,7 +8,7 @@ public class File extends FileSystemElement{
 
     @Override
     public void print() {
-        System.out.println(super.getName());
+        System.out.printf("%s%n", super.getName());
     }
 
     @Override

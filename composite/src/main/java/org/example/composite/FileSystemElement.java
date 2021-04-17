@@ -3,9 +3,18 @@ package org.example.composite;
 abstract class FileSystemElement {
 
     private String name;
+    private Directory parent;
 
     public FileSystemElement(String name) {
         this.name = name;
+    }
+
+    public void setParent(Directory parent) {
+        this.parent = parent;
+    }
+
+    public Directory getParent() {
+        return parent;
     }
 
     abstract void print();
@@ -19,15 +28,9 @@ abstract class FileSystemElement {
         return true;
     }
 
-    public boolean moveTo(FileSystemElement element) {
-        if (element instanceof Directory) {
-            ((Directory) element).add(this);
-            //usunac z obecnego directory
-
-            return true;
-        } else {
-            System.out.printf("Unable to move %s to %s file.", this.name, element);
-            return false;
-        }
+    public boolean moveTo(Directory element) {
+        parent.remove(this);
+        element.add(this);
+        return true;
     }
 }

@@ -19,7 +19,6 @@ public class Runner {
         File abctxt = new File("abc.txt");
         File documentodt = new File("document.odt");
 
-
         directoryA.add(f1doc);
         directoryA.add(f1txt);
         directoryA.add(f2xls);
@@ -35,17 +34,11 @@ public class Runner {
 
         directoryD.add(documentodt);
 
-
-        directoryA.printAllHierarchy();
-        //
-        //f5m2t.rename("f52.m2t");
-
-
-        //
-        //directoryA.remove(f1txt);
-
-        f1doc.moveTo(directoryB);
-        System.out.println();
-        directoryA.printAllHierarchy();
+        /*
+        TO DO:
+        f5m2t.rename("f52.m2t");
+        directoryA.remove(f1txt);
+        documentodt.moveTo(directoryB);
+        */
     }
 }
