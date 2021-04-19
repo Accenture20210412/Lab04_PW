@@ -18,6 +18,7 @@ abstract class FileSystemElement {
     }
 
     abstract void print();
+    abstract void print(String indentString);
 
     public String getName() {
         return name;

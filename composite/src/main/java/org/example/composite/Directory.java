@@ -23,8 +23,20 @@ public class Directory extends FileSystemElement{
     }
 
     @Override
-    public void print() { //should iterate over all elements
+    public void print() { // iterates over all elements
         dirElements.forEach(System.out::println);
+    }
+
+    @Override
+    void print(String indentString) {
+        System.out.printf("%s+%s%n", indentString, this.getName());
+        for (FileSystemElement f : dirElements) {
+            f.print(indentString+"     ");
+        }
+    }
+
+    void printAllHierarchy() {
+        print("");
     }
 
     public void add(FileSystemElement element) {

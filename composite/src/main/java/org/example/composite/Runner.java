@@ -33,12 +33,11 @@ public class Runner {
         directoryC.add(directoryD);
 
         directoryD.add(documentodt);
-
-        /*
-        TO DO:
+        
         f5m2t.rename("f52.m2t");
         directoryA.remove(f1txt);
         documentodt.moveTo(directoryB);
-        */
+
+        directoryA.printAllHierarchy();
     }
 }
